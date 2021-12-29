@@ -152,12 +152,14 @@ contract TheoNFT is ERC721URIStorage, Ownable, Pausable, ReentrancyGuard{
         return presale;
     }
 
-    function whiteListAddress(address _address) public onlyOwner() returns(bool){
-        isVerified[_address] = true;
-        preSaleMaxMintAmount[_address] = maxPublicAmount;
+    function whiteListAddress(address[] memory _address) public onlyOwner() returns(bool){
+        for(uint i; i < _address.length; i++){
+            isVerified[_address[i]] = true;
+            preSaleMaxMintAmount[_address[i]] = maxPublicAmount;
+        }
+        
         return true;
     }
-
     function pause() public onlyOwner() returns(bool) {
         _pause();
         return true;
