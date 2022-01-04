@@ -77,7 +77,6 @@ contract TheoNFT is ERC721URIStorage, Ownable, Pausable, ReentrancyGuard{
                _safeMint(_msgSender(), _tokenIds.current());
                _tokenIds.increment();
             }
-            
         }
     }
 
