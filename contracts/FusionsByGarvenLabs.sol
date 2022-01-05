@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract TheoNFT is ERC721URIStorage, Ownable, Pausable, ReentrancyGuard{
+contract FusionsByGarvenLabs is ERC721Enumerable, Ownable, Pausable, ReentrancyGuard{
 
     using Strings for uint256;
     using Counters for Counters.Counter;
@@ -23,7 +23,7 @@ contract TheoNFT is ERC721URIStorage, Ownable, Pausable, ReentrancyGuard{
 
     
     uint public maxSupply = 1000;
-    uint public maxPublicAmount = 5;
+    uint public maxPublicAmount = 10;
     uint public price = 0.001 ether;
     uint public presalePrice;
 
