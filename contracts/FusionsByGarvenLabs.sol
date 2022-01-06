@@ -22,7 +22,7 @@ contract FusionsByGarvenLabs is ERC721Enumerable, Ownable, Pausable, ReentrancyG
     bytes32 root = 0x3af020aab4e27a80329d7f7a7616a8c69b2317e8222e6211c2e495322c4a2a89;
 
     
-    uint public maxSupply = 1000;
+    uint public maxSupply = 8000;
     uint public maxPublicAmount = 10;
     uint public price = 0.001 ether;
     uint public presalePrice;
@@ -44,6 +44,7 @@ contract FusionsByGarvenLabs is ERC721Enumerable, Ownable, Pausable, ReentrancyG
         for(_tokenIds.current(); _tokenIds.current() < 100; _tokenIds.increment()){
             _safeMint(_msgSender(), _tokenIds.current());
         }
+        startPresale();
     }
 
 
