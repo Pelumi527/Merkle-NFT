@@ -85,10 +85,11 @@ contract FusionsByGarvenLabs is ERC721Enumerable, Ownable, Pausable, ReentrancyG
         return true;
     }
 
-    function verification(bytes32[] memory proof, bytes32 leaf, uint maxMintAmount) whenNotPaused() nonReentrant() public  returns(bool) {
+    function verification(bytes32[] memory proof, uint maxMintAmount) whenNotPaused() nonReentrant() public  returns(bool) {
+       
+        
+        bytes32 leaf = keccak256(abi.encodePacked(_msgSender()));
         bool verified = MerkleProof.verify(proof, root, leaf);
-        
-        
         console.log(verified);
         console.log(MerkleProof.verify(proof, root, leaf));
        
