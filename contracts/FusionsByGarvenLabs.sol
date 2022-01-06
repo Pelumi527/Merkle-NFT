@@ -24,7 +24,7 @@ contract FusionsByGarvenLabs is ERC721Enumerable, Ownable, Pausable, ReentrancyG
     
     uint public maxSupply = 8000;
     uint public maxPublicAmount = 10;
-    uint public price = 0.001 ether;
+    uint public price = 0.04 ether;
     uint public presalePrice;
 
     bool public presale;
